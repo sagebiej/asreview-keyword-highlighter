@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "ASReview Keyword Highlighter",
+  "version": "1.0",
+  "description": "Highlight multiple keywords in ASReview abstracts during screening",
+  "permissions": ["storage", "activeTab", "scripting", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Keyword Highlighter"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
